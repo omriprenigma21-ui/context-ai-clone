@@ -64,7 +64,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex h-screen w-full bg-theme-background overflow-hidden">
+    <div className="flex h-screen w-full bg-white overflow-hidden">
       {/* Sidebar */}
       <Sidebar
         isCollapsed={sidebarCollapsed}
@@ -81,7 +81,7 @@ export default function Home() {
           >
             {/* Drive Section */}
             <div
-              className="bg-theme-background min-w-0 shrink-0 grow-0 overflow-hidden"
+              className="bg-white min-w-0 shrink-0 grow-0 overflow-hidden"
               style={{
                 width: `${drivePanelWidth}%`,
                 display: drivePanelWidth === 0 ? 'none' : 'block',
@@ -94,7 +94,7 @@ export default function Home() {
             {/* Resizable Handle */}
             <div
               className={`group absolute top-0 z-50 flex h-full items-center justify-center select-none cursor-ew-resize ${
-                drivePanelWidth === 0 || drivePanelWidth === 100 ? 'bg-theme-muted' : ''
+                drivePanelWidth === 0 || drivePanelWidth === 100 ? 'bg-gray-50/80' : ''
               }`}
               role="separator"
               aria-orientation="vertical"
@@ -113,7 +113,7 @@ export default function Home() {
               <div className={`handle-bar group/bar absolute top-0 h-full w-2 ${
                 drivePanelWidth === 0 || drivePanelWidth === 100 ? 'left-1/2 -translate-x-1/2' : 'left-0'
               }`}>
-                <div className="bg-theme-navigation h-full w-full transition-transform duration-100 group-hover/bar:scale-x-100 group-hover/bar:delay-100 scale-x-0"></div>
+                <div className="bg-surface-container-high h-full w-full transition-transform duration-100 group-hover/bar:scale-x-100 group-hover/bar:delay-100 scale-x-0"></div>
               </div>
               <div className={`absolute top-1/2 z-30 flex -translate-y-[50%] items-center justify-center transition-transform duration-200 ${
                 drivePanelWidth === 0 || drivePanelWidth === 100 ? 'translate-x-0' : 'translate-x-3'
@@ -141,9 +141,10 @@ export default function Home() {
                     }}
                   >
                     <div
-                      className="bg-theme-navigation relative w-[6px] rounded-t"
+                      className="bg-surface-container-high relative w-[6px] rounded-t"
                       style={{
                         height: '28px',
+                        background: 'var(--surface-container-high)',
                         transform: drivePanelWidth === 0
                           ? 'translateY(1.5px) rotate(-13deg)' // Point RIGHT when drive is hidden
                           : drivePanelWidth === 100
@@ -153,9 +154,10 @@ export default function Home() {
                       }}
                     ></div>
                     <div
-                      className="bg-theme-navigation relative w-[6px] rounded-b"
+                      className="bg-surface-container-high relative w-[6px] rounded-b"
                       style={{
                         height: '28px',
+                        background: 'var(--surface-container-high)',
                         transform: drivePanelWidth === 0
                           ? 'translateY(-1.5px) rotate(13deg)' // Point RIGHT when drive is hidden
                           : drivePanelWidth === 100
@@ -171,7 +173,7 @@ export default function Home() {
 
             {/* Chat Section */}
             <div
-              className="flex min-w-0 flex-1 flex-col overflow-hidden bg-theme-background"
+              className="flex min-w-0 flex-1 flex-col overflow-hidden"
               style={{
                 width: `${chatPanelWidth}%`,
                 display: chatPanelWidth === 0 ? 'none' : 'flex',
